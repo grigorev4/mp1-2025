@@ -271,14 +271,20 @@ public:
             aug[i][n] = b.getComponent(i);
         }
 
+       // Matrica aug(n, n + 1);
+
+
         for (int k = 0; k < n; k++) {
+
+            // здесь помменять строки, pivot - макс в столбце
+
+
             double pivot = aug[k][k];
             for (int j = k; j <= n; j++) {
                 aug[k][j] = aug[k][j] / pivot;
             }
 
-            for (int i = 0; i < n; i++) {
-                if (i != k) {
+            for (int i = k+1; i < n; i++) {
                     double factor = aug[i][k];
                     for (int j = k; j <= n; j++) {
                         aug[i][j] = aug[i][j] - factor * aug[k][j];
