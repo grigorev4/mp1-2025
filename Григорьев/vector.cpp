@@ -96,7 +96,7 @@ public:
 
     double skalProizv(const Vector& other) const {
         if (size != other.size) {
-            cout << "Oshibka: raznye razmery" << endl;
+            cout << "Oshibka" << endl;
             return 0;
         }
         double result = 0;
@@ -108,7 +108,7 @@ public:
 
     Vector sum(const Vector& other) const {
         if (size != other.size) {
-            cout << "Oshibka: raznye razmery" << endl;
+            cout << "Oshibka" << endl;
             return Vector(0);
         }
         Vector result(size);
