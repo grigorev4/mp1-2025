@@ -95,6 +95,8 @@ public:
     }
 
     double skalProizv(const Vector& other) const {
+
+       // double t = other(5);
         if (size != other.size) {
             cout << "Oshibka" << endl;
             return 0;
