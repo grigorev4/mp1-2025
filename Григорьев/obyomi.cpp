@@ -13,16 +13,11 @@ public:
         nazvanie = n;
     }
 
-    void pokazatInfo() {
+    void pokazatInfo(double ob) {
         cout << "Figura: " << nazvanie << endl;
-        cout << "Obyom: " << obyom() << endl;
-    }
-
-    virtual double obyom() {
-        return 0;
+        cout << "Obyom: " << ob << endl;
     }
 };
-
 
 class Shar : public Figura {
 private:
@@ -38,7 +33,6 @@ public:
     }
 };
 
-
 class Kub : public Figura {
 private:
     double storona;
@@ -52,7 +46,6 @@ public:
         return storona * storona * storona;
     }
 };
-
 
 class Parallelepiped : public Figura {
 private:
@@ -70,7 +63,6 @@ public:
     }
 };
 
-
 class Cilindr : public Figura {
 private:
     double radius, vysota;
@@ -85,7 +77,6 @@ public:
         return PI * radius * radius * vysota;
     }
 };
-
 
 class Konus : public Figura {
 private:
@@ -102,28 +93,28 @@ public:
     }
 };
 
-
 int main() {
     cout << "obyomi figur:" << endl;
+    cout << endl;
 
     Shar shar(3.0);
-    shar.pokazatInfo();
+    shar.pokazatInfo(shar.obyom());
     cout << endl;
 
     Kub kub(4.0);
-    kub.pokazatInfo();
+    kub.pokazatInfo(kub.obyom());
     cout << endl;
 
     Parallelepiped box(3.0, 4.0, 5.0);
-    box.pokazatInfo();
+    box.pokazatInfo(box.obyom());
     cout << endl;
 
     Cilindr cilindr(2.0, 7.0);
-    cilindr.pokazatInfo();
+    cilindr.pokazatInfo(cilindr.obyom());
     cout << endl;
 
     Konus konus(3.0, 5.0);
-    konus.pokazatInfo();
+    konus.pokazatInfo(konus.obyom());
 
     return 0;
 }
